@@ -4,7 +4,7 @@
  * CSC 220 -  Data Structures
  * File Name: Assignment02PartE01.java
  * Author: Duc Ta
- * Author: Kullathon Sitthisarnwattanchai
+ * Author: Kullathon Sitthisarnwattanachai
  * **********************************************
  */
 

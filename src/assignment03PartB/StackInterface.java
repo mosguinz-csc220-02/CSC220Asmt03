@@ -6,7 +6,7 @@
  * Author: Frank M. Carrano
  * Author: Timothy M. Henry
  * Author: Duc Ta
- * Author: Kullathon Sitthisarnwattanchai
+ * Author: Kullathon Sitthisarnwattanachai
  * **********************************************
  */
 

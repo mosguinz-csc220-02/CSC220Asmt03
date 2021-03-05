@@ -5,7 +5,7 @@
  * File Name: PascalsTriangleGenerator.java
  * Author: Java Foundation
  * Author: Duc Ta
- * Author: Kullathon Sitthisarnwattanchai
+ * Author: Kullathon Sitthisarnwattanachai
  * **********************************************
  */
 
