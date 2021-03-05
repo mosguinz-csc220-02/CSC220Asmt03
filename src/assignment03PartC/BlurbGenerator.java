@@ -5,7 +5,7 @@
  * File Name: BlurbGenerator.java
  * Author: Java Foundation
  * Author: Duc Ta
- * Author: <First Name> <Last Name>
+ * Author: Kullathon Sitthisarnwattanchai
  * **********************************************
  */
 
