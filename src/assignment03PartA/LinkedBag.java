@@ -23,6 +23,15 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
     }
 
     @Override
+    public boolean add(T newEntry) {
+        Node newNode = new Node(newEntry);
+        newNode.next = firstNode;
+        firstNode = newNode;
+        numberOfEntries++;
+        return true;
+    }
+
+    @Override
     public boolean removeAllOccurrences(T[][] entries) {
     }
 
