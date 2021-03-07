@@ -36,6 +36,16 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
     }
 
     @Override
+    public int getCurrentSize() {
+        return numberOfEntries;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return numberOfEntries == 0;
+    }
+
+    @Override
     public boolean add(T newEntry) {
         Node newNode = new Node(newEntry);
         newNode.next = firstNode;
