@@ -22,6 +22,17 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
         numberOfEntries = 0;
     }
 
+    private boolean contains(T anEntry) {
+        Node thisNode = firstNode;
+        for (int i = 0; i < numberOfEntries; i++) {
+            if (anEntry.equals(thisNode.data)) {
+                return true;
+            }
+            thisNode = thisNode.next;
+        }
+        return false;
+    }
+
     @Override
     public boolean add(T newEntry) {
         Node newNode = new Node(newEntry);
