@@ -12,6 +12,8 @@
 
 package assignment03PartA;
 
+import java.util.ArrayList;
+
 public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
 
     private Node firstNode;
@@ -44,6 +46,26 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
 
     @Override
     public boolean removeAllOccurrences(T[][] entries) {
+        ArrayList<T> uniqueElements = new ArrayList<>();
+
+        System.out.println(" [-] Converting 2D array to 1D...");
+        System.out.println(" [-] Removing duplicates in 1D array...");
+        for (T[] row : entries) {
+            for (T item : row) {
+                if(!uniqueElements.contains(item)) {
+                    uniqueElements.add(item);
+                }
+            }
+        }
+
+        System.out.print(" [>] The final 1D array now contains: ");
+        for (T element : uniqueElements) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+
+        System.out.println(" [-] Removing the final 1D array items from the bag...");
+        return true;
     }
 
     @Override
