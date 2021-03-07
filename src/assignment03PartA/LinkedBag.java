@@ -13,6 +13,7 @@
 package assignment03PartA;
 
 import java.util.ArrayList;
+import javax.swing.event.CellEditorListener;
 
 public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
 
@@ -75,6 +76,15 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
         System.out.println();
 
         System.out.println(" [-] Removing the final 1D array items from the bag...");
+        for (T element : uniqueElements) {
+            Node nodeToRemove = getNodeReference(element);
+            while (nodeToRemove != null) {
+                nodeToRemove.data = firstNode.data;
+                firstNode = firstNode.next;
+                numberOfEntries--;
+                nodeToRemove = getNodeReference(element);
+            }
+        }
         return true;
     }
 
