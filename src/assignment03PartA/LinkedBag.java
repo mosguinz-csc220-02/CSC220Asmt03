@@ -57,6 +57,7 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
 
     @Override
     public boolean removeAllOccurrences(T[][] entries) {
+        System.out.println("[+] Removing 2D test array items from the bag...");
         ArrayList<T> uniqueElements = new ArrayList<>();
 
         System.out.println(" [-] Converting 2D array to 1D...");
@@ -75,6 +76,7 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
         }
         System.out.println();
 
+        // TODO: fix final bag order. Expected: Good; Got: Godo
         System.out.println(" [-] Removing the final 1D array items from the bag...");
         for (T element : uniqueElements) {
             Node nodeToRemove = getNodeReference(element);
