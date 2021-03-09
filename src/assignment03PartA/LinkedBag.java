@@ -24,17 +24,6 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
         numberOfEntries = 0;
     }
 
-    private Node getNodeReference(T anEntry) {
-        Node thisNode = firstNode;
-        for (int i = 0; i < numberOfEntries; i++) {
-            if (anEntry.equals(thisNode.data)) {
-                return thisNode;
-            }
-            thisNode = thisNode.next;
-        }
-        return null;
-    }
-
     @Override
     public int getCurrentSize() {
         return numberOfEntries;
@@ -57,20 +46,20 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
     @Override
     public boolean removeAllOccurrences(T[][] entries) {
         System.out.println("[+] Removing 2D test array items from the bag...");
-        ArrayList<T> uniqueElements = new ArrayList<>();
+        ArrayList<T> elementsToRemove = new ArrayList<>();
 
         System.out.println(" [-] Converting 2D array to 1D...");
         System.out.println(" [-] Removing duplicates in 1D array...");
         for (T[] row : entries) {
             for (T item : row) {
-                if(!uniqueElements.contains(item)) {
-                    uniqueElements.add(item);
+                if(!elementsToRemove.contains(item)) {
+                    elementsToRemove.add(item);
                 }
             }
         }
 
         System.out.print(" [>] The final 1D array now contains: ");
-        for (T element : uniqueElements) {
+        for (T element : elementsToRemove) {
             System.out.print(element + " ");
         }
         System.out.println();
@@ -78,7 +67,7 @@ public final class LinkedBag<T> implements PrimaryDataStructureBagInterface<T> {
         System.out.println(" [-] Removing the final 1D array items from the bag...");
         Node thisNode = firstNode;
         while (thisNode != null) {
-            if (uniqueElements.contains(thisNode.data)) {
+            if (elementsToRemove.contains(thisNode.data)) {
                 thisNode.data = firstNode.data;
                 firstNode = firstNode.next;
                 numberOfEntries--;
