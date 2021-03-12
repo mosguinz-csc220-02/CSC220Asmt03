@@ -16,6 +16,13 @@ public class PascalsTriangleGenerator {
     public PascalsTriangleGenerator() {
     }
 
+    /**
+     * Recursively computes the n-th row of the Pascal's triangle, where the row numbering starts at
+     * 1, with each n-th row containing n integers.
+     *
+     * @param rowToCompute The n-th row of the Pascal's triangle to compute, where n > 0.
+     * @return An array of integers of the n-th row.
+     */
     public int[] computeRow(int rowToCompute) {
         // Base case: first row contains exactly one element: 1.
         if (rowToCompute == 1) {
