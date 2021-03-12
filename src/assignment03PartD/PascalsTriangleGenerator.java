@@ -23,10 +23,9 @@ public class PascalsTriangleGenerator {
         for (int i = 1; i < triangle.length ; i++) {
             final int[] previousRow = triangle[i - 1];
             int[] thisRow = new int[i + 1];
-            for (int j = 0; j < thisRow.length; j++) {
-                final int topLeft = j == 0 ? 0 : previousRow[j - 1];
-                final int topRight = j == previousRow.length ? 0 : previousRow[j];
-                thisRow[j] = topLeft + topRight;
+            thisRow[0] = thisRow[i] = 1;
+            for (int j = 1; j < previousRow.length; j++) {
+                thisRow[j] = previousRow[j - 1] + previousRow[j];
             }
             triangle[i] = thisRow;
         }
