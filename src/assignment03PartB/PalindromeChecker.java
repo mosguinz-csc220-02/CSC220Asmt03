@@ -20,6 +20,15 @@ import java.util.Scanner;
 //
 public class PalindromeChecker {
 
+    /**
+     * Returns whether the given string is a palindrome.
+     * <p>
+     * The method disregards all non-English alphabets (A-Z) and letter cases for comparison, i.e.,
+     * all characters in the string that matches the regex expression {@code [^a-z]}.
+     *
+     * @param string The string to check.
+     * @return {@code true} if the given string is considered a palindrome, false otherwise.
+     */
     private static boolean isPalindrome(String string) {
         OurStack<Character> stack = new OurStack<>();
 
