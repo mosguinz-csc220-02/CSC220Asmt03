@@ -12,7 +12,6 @@
 
 package assignment03PartB;
 
-import java.util.EmptyStackException;
 import java.util.Scanner;
 
 //
@@ -32,13 +31,10 @@ public class PalindromeChecker {
         }
 
         StringBuilder reversed = new StringBuilder();
-        while (true) {
-            try {
-                reversed.append(stack.pop());
-            } catch (EmptyStackException e) {
-                return reversed.toString().equals(string);
-            }
+        while (!stack.isEmpty()) {
+            reversed.append(stack.pop());
         }
+        return reversed.toString().equals(string);
     }
 
     //
