@@ -12,6 +12,7 @@
 
 package assignment03PartB;
 
+import java.util.EmptyStackException;
 import java.util.Scanner;
 
 //
@@ -21,7 +22,24 @@ import java.util.Scanner;
 public class PalindromeChecker {
 
     private static boolean isPalindrome(String string) {
-    } 
+        OurStack<Character> stack = new OurStack<>();
+
+        // Cast to lowercase and remove all non-alphabetical characters.
+        string = string.toLowerCase().replaceAll("[^a-z]", "");
+
+        for (char c : string.toCharArray()) {
+            stack.push(c);
+        }
+
+        StringBuilder reversed = new StringBuilder();
+        while (true) {
+            try {
+                reversed.append(stack.pop());
+            } catch (EmptyStackException e) {
+                return reversed.toString().equals(string);
+            }
+        }
+    }
 
     //
     // - Do not change the "main" method.
