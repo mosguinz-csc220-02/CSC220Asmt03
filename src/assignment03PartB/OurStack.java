@@ -12,29 +12,46 @@
 
 package assignment03PartB;
 
+import java.util.EmptyStackException;
+
 public class OurStack<T> implements StackInterface<T> {
 
+    private Node topNode;
+
     public OurStack() {
+        topNode = null;
     }
 
     @Override
     public void push(T newEntry) {
+        topNode = new Node(newEntry, topNode);
     }
 
     @Override
     public T peek() {
+        if (isEmpty()) {
+            // Nothing to peek if it's empty!
+            throw new EmptyStackException();
+        }
+        return topNode.getData();
     }
 
     @Override
     public T pop() {
+        T element = peek();
+        assert topNode != null;
+        topNode = topNode.getNext();
+        return element;
     }
 
     @Override
     public boolean isEmpty() {
+        return topNode == null;
     }
 
     @Override
     public void clear() {
+        topNode = null;
     }
 
     private class Node {
