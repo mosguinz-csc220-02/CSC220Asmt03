@@ -15,6 +15,7 @@ public class BlurbGenerator {
 
     private static final int MIN_BLURB_SIZE = 4;
     private static final int MAX_BLURB_SIZE = 21;
+    private static final int MAX_WHOOZIT_Y_SIZE = 5;
     private final int blurbSize;
 
     /**
@@ -46,12 +47,15 @@ public class BlurbGenerator {
      * Generates a random Whoozit. A Whoozit is the character 'x' followed by zero or more 'y's.
      */
     private String makeWhoozit() {
+        return "x" + makeYString();
     }
 
     /**
      * Recursively generates a string of zero or more 'y's.
      */
     private String makeYString() {
+        // TODO: Make this recursive.
+        return "y".repeat(getRandInt(0, MAX_WHOOZIT_Y_SIZE));
     }
 
     /**
