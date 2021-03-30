@@ -21,8 +21,19 @@ public class BlurbGenerator {
      * Instantiates a random number generator needed for blurb creation.
      */
     public BlurbGenerator() {
-        blurbSize = (int) (Math.random() * (MAX_BLURB_SIZE - MIN_BLURB_SIZE + 1) + MIN_BLURB_SIZE);
+        blurbSize = getRandInt(MIN_BLURB_SIZE, MAX_BLURB_SIZE);
         System.out.println(blurbSize);
+    }
+
+    /**
+     * Helper to return a random integer in the range [min, max].
+     *
+     * @param min Minimum value, inclusive.
+     * @param max Maximum value, inclusive.
+     * @return The random integer.
+     */
+    private static int getRandInt(int min, int max) {
+        return (int) (Math.random() * (max - min + 1) + min);
     }
 
     /**
