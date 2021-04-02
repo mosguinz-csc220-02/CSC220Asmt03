@@ -41,6 +41,11 @@ public class BlurbGenerator {
      * Generates and returns a random Blurb. A Blurb is a Whoozit followed by one or more Whatzits.
      */
     public String makeBlurb() {
+        StringBuilder blurb = new StringBuilder(makeWhoozit() + makeWhatzit());
+        while (blurb.length() < MAX_BLURB_SIZE) {
+            blurb.append(makeWhatzit());
+        }
+        return blurb.toString();
     }
 
     /**
@@ -62,6 +67,7 @@ public class BlurbGenerator {
      * Recursively generates a string of one or more Whatzits.
      */
     private String makeMultiWhatzits() {
+        return null;
     }
 
     /**
@@ -69,5 +75,7 @@ public class BlurbGenerator {
      * a Whoozit.
      */
     private String makeWhatzit() {
+        final int x = getRandInt(0, 1);
+        return "q" + (x == 0 ? "d" : "z") + makeWhoozit();
     }
 }
