@@ -42,7 +42,7 @@ public class BlurbGenerator {
      */
     public String makeBlurb() {
         StringBuilder blurb = new StringBuilder(makeWhoozit() + makeWhatzit());
-        while (blurb.length() < MAX_BLURB_SIZE) {
+        while (blurb.length() < MIN_BLURB_SIZE) {
             blurb.append(makeWhatzit());
         }
         return blurb.toString();
