@@ -67,7 +67,6 @@ public class BlurbGenerator {
      * a Whoozit.
      */
     private String makeWhatzit() {
-        final int x = getRandInt(0, 1);
-        return "q" + (x == 0 ? "d" : "z") + makeWhoozit();
+        return "q" + (getRandInt(0, 1) == 0 ? "d" : "z") + makeWhoozit();
     }
 }
