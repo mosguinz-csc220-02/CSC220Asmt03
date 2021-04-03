@@ -52,15 +52,14 @@ public class BlurbGenerator {
      * Generates a random Whoozit. A Whoozit is the character 'x' followed by zero or more 'y's.
      */
     private String makeWhoozit() {
-        return "x" + makeYString();
+        return "x" + makeYString(getRandInt(0, MAX_WHOOZIT_Y_SIZE));
     }
 
     /**
      * Recursively generates a string of zero or more 'y's.
      */
-    private String makeYString() {
-        // TODO: Make this recursive.
-        return "y".repeat(getRandInt(0, MAX_WHOOZIT_Y_SIZE));
+    private String makeYString(int ySize) {
+        return ySize == 0 ? "" : makeYString(ySize - 1) + "y";
     }
 
     /**
