@@ -5,6 +5,7 @@
 
 # Generated CSVs for Part E
 *.csv
+!CSC220Asmt03/*.csv
 
 ### Java ###
 # Compiled class file
